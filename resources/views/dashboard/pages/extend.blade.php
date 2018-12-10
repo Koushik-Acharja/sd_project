@@ -5,6 +5,7 @@
   @include('dashboard.include.dashboard-link')
 </head>
 <body>
+  <input name="date" class="form-control" type="text" id="datetime" readonly/>
 <form action="{{ URL::to('trytest') }}"" method="post">
 @if(count($requireradio))
   @foreach($requireradio as $d)

@@ -99,7 +99,14 @@ class BasicController extends Controller
     public function login(){
       return view('try');
    }
-
+   public function eventlog(){
+    if(Session::has('role')){
+      return redirect('admin');
+    }
+    else{
+      return redirect('user');
+    }
+   }
    public function trytest(Request $req,$id){
     //$obj = EventRequirement::all();
     echo $radio = $req->get('$id', 0);
@@ -113,6 +120,7 @@ class BasicController extends Controller
       if($user->role==0){
         //Session::get('exception','Email and password not matched');
         Session::put('userid',$user->id);
+        Session::put('role',$user->role);
         return redirect('admin');
       }
       else {

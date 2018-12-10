@@ -11,6 +11,9 @@
 |
 
 */
+Route::get('/d', function () {
+    return view('dashboard.pages.extend');
+});
 Route::get('/', 'BasicController@welcome');
 Route::get('welcome', 'BasicController@welcome');
 /*
@@ -47,6 +50,8 @@ Route::get('signup', 'BasicController@signup');
 Route::post('signupStore','BasicController@signupStore');
 
 Route::group(['middleware' => 'checkloggedin'], function(){
+	Route::get('eventlog','BasicController@eventlog');
+
 	Route::get('user', 'DashboardController@dashboard');
 	Route::get('dashboard-event-draft', 'DashboardController@eventdraft');
 	Route::get('myprofile', 'DashboardController@myprofile');

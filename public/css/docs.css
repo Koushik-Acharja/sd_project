@@ -51,7 +51,10 @@ input[type="text"]:focus {border:none; outline:none; }
 
 img {max-width:100%; }
 body.inner-page {background:#efefef; }
+/*
 .page {padding-top:121px; position:relative;}
+*/
+.page {padding-top:92px; position:relative;}
 
 .btn.gray {background:#787878; line-height:41px; padding:0 25px; border:solid 1px #787878; box-shadow:0 1px 0px #aeaeae inset;}
 .btn.gray .icon  {display:inline-block; margin:11px 0 0 5px; line-height:22px; font-size:13px; vertical-align:top;}

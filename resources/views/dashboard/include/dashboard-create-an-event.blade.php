@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <label class="m-t-20" for="exampleFormControlTextarea">DAY</label>
-                                    <div class='input-group clockpicker' id='datetimepicker1'>
+                                    <div class='input-group clockpicker' id='datetimepicker3'>
                                         <input name="date" type="date" class="form-control" required/>
                                         <span class="input-group-append">
                                             <span class="input-group-text">

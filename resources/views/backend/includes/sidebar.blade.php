@@ -1,5 +1,11 @@
 <ul class="sidebar navbar-nav">
   <li class="nav-item active">
+    <a class="nav-link" href="{{ URL::to('welcome') }}">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+  </li>
+  <li class="nav-item active">
     <a class="nav-link" href="{{ URL::to('admin') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span>

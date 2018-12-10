@@ -33,14 +33,19 @@
     
 <body>
     <div class="page">
+        <!--
         <div id="loader-wrapper">
             <div id="loader"><img src="images/loader.gif" alt=""></div>
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
+    -->
         <header id="header">
+            <!--
             <div class="quck-link">
                 <div class="container">
+                    -->
+                    <!--
                     <div class="mail"><a href="MailTo:info@eventplanning.com"><span class="icon icon-envelope"></span>info@eventplanning.com</a></div>
                     <div class="right-link">
                         <ul>
@@ -50,9 +55,12 @@
                             <li><a href="javascript:;" data-toggle="modal" data-target="#loginModal">Login</a></li>
                         </ul>
                     </div>
+
                 </div>    
             </div>
+         -->
             <nav id="nav-main">
+
                 <div class="container">
                     <div class="navbar navbar-inverse">
                         <div class="navbar-header">
@@ -67,12 +75,7 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="single-col active">
-                                    <a href="index.html">Home <span class="icon icon-arrow-down"></span></a>
-                                    <ul>
-                                        <li><a href="index.html">Home Version 1</a></li>
-                                        <li><a href="index2.html">Home Version 2</a></li>
-                                        <li><a href="index3.html">Home Version 3</a></li>
-                                    </ul>
+                                    <a href="{{ URL::to('/') }}">Home</a>
                                 </li>
                                 <li><a href="aboutUs.html">About Us</a></li>
                                 <li>
@@ -123,10 +126,21 @@
                                         <li><a href="page-404.html">404 page</a></li>
                                     </ul>
                                 </li>
+                            <!--
                                 <li><a href="{{ URL::to('login') }}">Login </a></li>
                                 <li><a href="{{ URL::to('signup') }}">Register </a></li>
+                            -->
+                @if(!session('userid'))
+                                <li><a href="javascript:;" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                                <li><a href="javascript:;" data-toggle="modal" data-target="#registrationModal">Registration</a></li>
                                 <li><a href="contact.html">Contact us</a></li>
+                @else
+                                <li><a href="{{ URL::to('eventlog') }}">Make An Event</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="{{  URL::to('logout') }}">Logout</a></li>
+                @endif
                             </ul>
+                <!--
                             <div class="search-box">
                                 <div class="search-icon"><span class="icon icon-search"></span></div>
                                 <div class="search-view">
@@ -138,6 +152,7 @@
                                     </div>
                                 </div>
                             </div>
+                -->
                         </div>
                     </div>
                 </div>
@@ -159,15 +174,18 @@
                             </div>
                         </div>
                         <div class="or-text"><span>OR</span></div>
+                        <form action="{{ URL::to('loginStore') }}" method="post">
+                            {{ csrf_field() }}
                         <div class="input-form">
                             <div class="input-box">
                                 <div class="icon icon-user"></div>
-                                <input type="text" placeholder="Username">
+                                <input name="email" type="text" placeholder="Email ID">
                             </div>
                             <div class="input-box">
                                 <div class="icon icon-lock"></div>
-                                <input type="text" placeholder="Password">
+                                <input name="password" type="password" placeholder="Password">
                             </div>
+                        <!--
                             <div class="check-slide">
                                 <div class="check">
                                     <label class="label_check" for="checkbox-02"><input type="checkbox" name="sample-checkbox-01" id="checkbox-02" value="1" checked="">Remember me</label>
@@ -175,11 +193,15 @@
                                 </div>
                                 <a href="#">Forgot password ?</a>
                             </div>
+                            <a href="javascript:;" data-toggle="modal" data-target="#loginModal">Login</a>
+                            <a href="javascript:;" data-toggle="modal" data-target="#registrationModal">Registration</a>
+                        -->
                             <div class="submit-slide">
                                 <input type="submit" value="Login" class="btn">
-                            </div>
+                            </div>       
                         </div>
-                        <div class="signUp-link">Haven’t signed up yet? <a href="javascript:void(0);">Sign Up</a></div>
+                        </form>
+                        <div class="signUp-link">Haven’t signed up yet? <a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal">Sign Up</a></div>
                     </div>
                 </div>
             </div>
@@ -200,18 +222,27 @@
                             </ul>
                         </div>
                         <div class="form-filde">
+                        <form action="{{ URL::to('signupStore') }}" method="post">
+                            {{ csrf_field() }}
                             <div class="input-box">
-                                <input type="text" placeholder="Email ID">
+                                <input name="name" type="text" placeholder="Username">
                             </div>
                             <div class="input-box">
-                                <input type="text" placeholder="Username">
+                                <input name="email" type="email" placeholder="Email ID">
                             </div>
                             <div class="input-box">
-                                <input type="text" placeholder="Password">
+                                <input name="address" type="text" placeholder="Address">
                             </div>
                             <div class="input-box">
-                                <input type="text" placeholder="Phone">
+                                <input name="phone" type="number" placeholder="Phone">
                             </div>
+                            <div class="input-box">
+                                <input name="password" type="password" placeholder="Password">
+                            </div>
+                            <div class="input-box">
+                                <input name="confirmpassword" type="password" placeholder="Confirm Password">
+                            </div>
+                        <!--
                             <div class="captcha-box">
                                 <input type="text" placeholder="Enter Captcha">
                                 <div class="captcha-img"><img src="images/capcha-img.png" alt=""></div>
@@ -220,10 +251,12 @@
                             <div class="check-slide">
                                 <label class="label_check" for="checkbox-03"><input type="checkbox" name="sample-checkbox-01" id="checkbox-03" value="1" checked="">By signing up, I agree to EventPlanning terms of services</label>
                             </div>
+                        -->
                             <div class="submit-slide">
                                 <input type="submit" value="Register" class="btn">
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>    
             </div>
@@ -716,11 +749,13 @@
                     </div>
                 </div>
             </div>
+        <!--
             <div class="footer-bottom">
                 <div class="container">
                     <p>Copyright &copy; <span></span> - EventPlanning  | All Rights Reserved</p>
                 </div>
             </div>
+        -->
         </footer>
     </div>
     <!-- Bootstrap core JavaScript

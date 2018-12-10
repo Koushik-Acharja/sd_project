@@ -100,6 +100,7 @@ $(".abcd").css('opacity', '1');
 */
 </script>
 <!-- ####Cataring yes no for hidding content -->
+<!--
     <script type="text/javascript">
       $(function() {
     $('#datetimepicker4').datetimepicker({
@@ -111,4 +112,14 @@ $(".abcd").css('opacity', '1');
       pickDate: false
     });
   });
-    </script>
+  </script>
+-->
+<script>
+    var today = new Date();
+    $("#datetime").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        autoclose: true,
+        todayBtn: true,
+        startDate : today
+    });
+</script>
