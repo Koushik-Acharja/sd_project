@@ -16,7 +16,7 @@ class CreateBookeventsTable extends Migration
         Schema::create('bookevents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 100);
-            $table->string('description', 150);->nullable();
+            $table->string('description', 150)->nullable();
             $table->string('day', 10);
             $table->string('hour', 10);
             $table->string('min', 10)->nullable();
