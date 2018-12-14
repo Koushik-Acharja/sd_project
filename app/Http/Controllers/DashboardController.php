@@ -12,6 +12,19 @@ use App\CheckBox;
 
 class DashboardController extends Controller
 {
+  public function createanevent(){
+    $rule = Rule::orderBy('sort_order', 'ASC')->get();
+      $requirecheckbox = EventRequirement::all();
+      $requireradio = EventRequirement::where('type','=','RadioButton')->get();
+      $eventtype = EventType::all();
+      $eventguest = EventGuest::all();
+    return view('dashboard.include.dashboard-create-an-event')->with(compact('rule','requirecheckbox','requireradio','eventtype','eventguest'));
+  }
+  public function draft()
+  {
+    $obj = Bookevent::all();
+      return view('dashboard.pages.dashboard-draft')->with(compact('obj'));
+  }
     public function try(){
     $requireradio = EventRequirement::where('type','=','RadioButton')->get();
     return view('extend')->with(compact('requireradio'));
@@ -35,11 +48,11 @@ class DashboardController extends Controller
       $eventtype = EventType::all();
       $eventguest = EventGuest::all();
 
-      return view('dashboard.pages.dashboard')->with(compact('rule','requirecheckbox','requireradio','eventtype','eventguest'));
+      return view('dashboard.pages.dashboard');
    }
    public function eventStore(Request $request)
    {
-
+    /*
       echo 'Successfully Inserted';
       echo "<br>";
       $title = $request->title;
@@ -74,7 +87,7 @@ class DashboardController extends Controller
       echo "<br>";
 
       $eventrequirement = new CheckBox;
-      $eventrequirement->title = implode(",", $request->required);
+      $eventrequirement->title = implode(", ", $request->required);
       $eventrequirement->save();
 
       $fromtable = CheckBox::select('title')->get();
@@ -85,23 +98,63 @@ class DashboardController extends Controller
       echo "$describe";
       echo "<br>";
 
-      if ($request->get('customRadioInline2', 0)) {
-        $typeofcatering = $request->typeofcatering;
-        $specialrequirement = $request->specialrequirement;
-        $timeoffood = $request->timeoffood;
-        $caterednumber = $request->caterednumber;
-
-        echo "$typeofcatering";
-        echo "<br>";
-        echo "$specialrequirement";
-        echo "<br>";
-        echo "$timeoffood";
-        echo "<br>";
-        echo "$caterednumber";
-        echo "<br>";
+      $radio = $request->get('Radio2', 0);
+      if ($radio) {
+        echo 'Yes';
       }else{
         echo "NoNoNo";
       }
+      */
+      
+
+      $title            = $request->title;
+      $description      = $request->description;
+      $dateini          = \Carbon\Carbon::parse($request->date);
+      //$dateini->format('d / m / Y');
+      $hour             = $request->hour;
+      $minute           = $request->min;
+      $location         = $request->location;
+      $sponsors         = $request->sponsors;
+      $guesttype        = $request->get('event-guest');
+      $eventtype        = $request->get('event-type');
+      $eventrequirement = implode(", ", $request->required);
+      $describe         = $request->describe;
+
+      $obj = new Bookevent;
+      $obj->title                = $title;
+      $obj->description          = $description;
+      $obj->day                  = $dateini->format('d / m / Y');
+      $obj->hour                 = $hour;
+      $obj->min                  = $minute;
+      $obj->location             = $location;
+      $obj->sponsors             = $sponsors;
+      $obj->guest                = $guesttype;
+      $obj->event_type           = $eventtype;
+      $obj->special_requirements = $eventrequirement;
+      $obj->describe             = $describe;
+
+      if ($request->get('customRadioInline2', 0)) {
+        $cateringinfo       = 'Yes';
+        $typeofcatering     = $request->typeofcatering;
+        $specialrequirement = $request->specialrequirement;
+        $timeoffood         = $request->timeoffood;
+        $caterednumber      = $request->caterednumber;
+
+        $obj->type_of_catering = $typeofcatering;
+        $obj->special_catering = $specialrequirement;
+        $obj->time_of_food     = $timeoffood;
+        $obj->catered_numbers  = $caterednumber;
+      }else{
+        $cateringinfo       = 'No';
+      }
+
+      $obj->catering_info = $cateringinfo;
+
+      if($obj->save()){
+        echo 'Successfully Inserted';
+        return redirect('draft');
+      }
+      
  }
  /*
   BasicController(){

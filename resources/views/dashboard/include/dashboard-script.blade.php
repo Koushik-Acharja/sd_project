@@ -123,3 +123,6 @@ $(".abcd").css('opacity', '1');
         startDate : today
     });
 </script>
+<script>
+$("#creat-event").modal("show");
+</script>

@@ -53,6 +53,8 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('eventlog','BasicController@eventlog');
 
 	Route::get('user', 'DashboardController@dashboard');
+	Route::get('create-an-event','DashboardController@createanevent');
+	Route::get('draft', 'DashboardController@draft');
 	Route::get('dashboard-event-draft', 'DashboardController@eventdraft');
 	Route::get('myprofile', 'DashboardController@myprofile');
 	Route::get('edit-profile', 'DashboardController@editprofile');
