@@ -66,6 +66,10 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('alladmin', 'Admin\AccessController@alladmin');
 	Route::get('alluser', 'Admin\AccessController@alluser');
 
+	Route::get('event-new-request', 'Admin\EventController@eventnewrequest');
+	Route::get('event-in-progress', 'Admin\EventController@eventinprogress');
+	Route::get('event-history', 'Admin\EventController@eventhistory');
+
 	Route::get('alladmin-add', 'Admin\AccessController@alladminadd');
 	Route::post('alladmin-store', 'Admin\AccessController@alladminstore');
 	Route::get('alladmin-edit/{id}', 'Admin\AccessController@alladminrewrite');

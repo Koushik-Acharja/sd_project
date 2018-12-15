@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    @include('dashboard.include.dashboard-link')
-    <link href="css/docs.css" rel="stylesheet"><!--  template structure css -->
-    <link rel="shortcut icon" href="images/Favicon.ico">
-  </head>
+@extends('backend.layouts.default')
+@section('content')
+<ol class="breadcrumb">
+	<li class="breadcrumb-item">
+	  <a href="{{ URL::to('admin') }}">Dashboard</a>
+	</li>
+	<li class="breadcrumb-item active">Overview</li>
+</ol>
 
-  <body id="page-top">
-
-    <div class="header">
-        @include('dashboard.include.dashboard-header')
-    </div>
-    <!-- /# header -->
-    <div class="menu">
-        @include('dashboard.include.dashboard-nav')
-    </div>
-    <div class="page-title">
-        @include('dashboard.pages.dashboard-element')
-    </div>
-<div class="content" style="background-color: #efefef;">
+<div class="content" style="background-color: #efefef;
+    font-family: Montserrat, sans-serif; font-weight: 500;>
             <div class="container"  style=" padding-bottom: 80px;">
                 @if($obj)
                 @foreach($obj as $obj)
@@ -177,11 +167,12 @@
                         </tr>
                     </tbody>
                 </table>
+                </table>
 
                     <table class="bookinTotal">
                         <tr>
                             <td class="subTotal">Subtotal</td>
-                            <td class="amount subTotal">৳ 13,000</td>
+                            <td class="amount subTotal">৳ <input type="text" name="subtotal" placeholder="Input Total Amount" size="16" align="right" position="center"></td>
                         </tr>
                         <tr>
                             <td >Min. Booking Amount to pay</td>
@@ -208,18 +199,9 @@ box-shadow: inset 0px 1px 0px #e0a97f;
 background: #f15b22;
 color: #fff;" href="#" class="btn eventbtn">Book Now</a>
                     </div>
-                    <div class="note">
-                        <div class="inner-block">
-                            <div class="iconn material-icons" style=" color: #f15b22;">priority_high</div>
-                            <label>Important Information</label>
-                            <p>Please carry any valid photo id proof at the venue</p>
-                        </div>
-                    </div>
                 </div>
                 @endforeach
                 @endif
             </div>
         </div>
-        @include('dashboard.include.dashboard-script')
-    </body>
-</html>
+@stop

@@ -15,6 +15,18 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="postsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="fas fa-fw fa-folder"></i>
+      <span>Event</span>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="postsDropdown">
+      <a class="dropdown-item" href="{{ URL::to('event-new-request') }}"">Event New Request</a>
+      <a class="dropdown-item" href="{{ URL::to('event-in-progress') }}"">Event In Progress</a>
+      <a class="dropdown-item" href="{{ URL::to('event-history') }}">Event History</a>
+    </div>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="postsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-fw fa-folder"></i>
       <span>Access</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="postsDropdown">
