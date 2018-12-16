@@ -7,12 +7,12 @@
 	<li class="breadcrumb-item active">Overview</li>
 </ol>
 
-<div class="content" style="background-color: #efefef;
+<div class="content" style="
     font-family: Montserrat, sans-serif; font-weight: 500;>
             <div class="container"  style=" padding-bottom: 80px;">
                 @if($obj)
                 @foreach($obj as $obj)
-                <div class="bookin-info table-responsive">
+                <div class="bookin-info table-responsive" style="background-color: #efefef;">
                 	<table class="bookin-table">
                         <tbody>
                         <tr>
@@ -172,11 +172,11 @@
                     <table class="bookinTotal">
                         <tr>
                             <td class="subTotal">Subtotal</td>
-                            <td class="amount subTotal">৳ <input type="text" name="subtotal" placeholder="Input Total Amount" size="16" align="right" position="center"></td>
+                            <td class="amount subTotal">৳ <input type="text" name="subtotal" placeholder="Input Total Amount" size="16" align="right" direction:RTL></td>
                         </tr>
                         <tr>
                             <td >Min. Booking Amount to pay</td>
-                            <td class="amount">৳ 13,000</td>
+                            <td class="amount">৳ <input type="text" name="afterdiscount" placeholder="After Discount Pay" size="16" align="right" direction:RTL></td>
                         </tr>
                     </table>
                     <div class="bookinRow">
@@ -186,7 +186,7 @@
                         </div>
                         <div class="input-box">
                             <label>Address :</label>
-                            <input type="text" placeholder="User@yahoo.com">
+                            <input type="text" placeholder="Home Address">
                         </div>
                         <div class="input-box">
                             <label>Phone :</label>

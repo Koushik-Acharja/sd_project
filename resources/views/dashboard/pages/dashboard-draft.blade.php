@@ -195,7 +195,7 @@
                         </div>
                         <div class="input-box">
                             <label>Address :</label>
-                            <input type="text" placeholder="User@yahoo.com">
+                            <input type="text" placeholder="Home Address">
                         </div>
                         <div class="input-box">
                             <label>Phone :</label>

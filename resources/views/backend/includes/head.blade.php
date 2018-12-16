@@ -14,7 +14,8 @@
 <!--  event table structure css -->
 <style type="text/css">
 .bookin-info {
-    padding: 40px 0 0 0;
+    padding: 5px 5px 5px 5px;
+	margin: 40px 0px 40px 0px;
 }
 .bookin-info .bookin-table {
     background: #fff;
