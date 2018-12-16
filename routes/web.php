@@ -53,6 +53,8 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('eventlog','BasicController@eventlog');
 
 	Route::get('user', 'DashboardController@dashboard');
+	Route::get('create-an-event','DashboardController@createanevent');
+	Route::get('draft', 'DashboardController@draft');
 	Route::get('dashboard-event-draft', 'DashboardController@eventdraft');
 	Route::get('myprofile', 'DashboardController@myprofile');
 	Route::get('edit-profile', 'DashboardController@editprofile');
@@ -63,6 +65,10 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 
 	Route::get('alladmin', 'Admin\AccessController@alladmin');
 	Route::get('alluser', 'Admin\AccessController@alluser');
+
+	Route::get('event-new-request', 'Admin\EventController@eventnewrequest');
+	Route::get('event-in-progress', 'Admin\EventController@eventinprogress');
+	Route::get('event-history', 'Admin\EventController@eventhistory');
 
 	Route::get('alladmin-add', 'Admin\AccessController@alladminadd');
 	Route::post('alladmin-store', 'Admin\AccessController@alladminstore');

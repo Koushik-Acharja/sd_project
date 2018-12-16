@@ -201,7 +201,7 @@
                             </div>       
                         </div>
                         </form>
-                        <div class="signUp-link">Haven’t signed up yet? <a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal">Sign Up</a></div>
+                        <div class="signUp-link">Haven’t signed up yet? <a href="javascript:void(0);">Sign Up</a></div>
                     </div>
                 </div>
             </div>
@@ -225,22 +225,27 @@
                         <form action="{{ URL::to('signupStore') }}" method="post">
                             {{ csrf_field() }}
                             <div class="input-box">
-                                <input name="name" type="text" placeholder="Username">
+                                <input name="name" type="text" placeholder="Username" oninvalid="this.setCustomValidity('Please Enter Your Name')"
+ oninput="setCustomValidity('')" required>
                             </div>
                             <div class="input-box">
-                                <input name="email" type="email" placeholder="Email ID">
+                                <input name="email" type="email" placeholder="Email ID" oninvalid="this.setCustomValidity('Please Enter valid email')"
+ oninput="setCustomValidity('')" required>
                             </div>
                             <div class="input-box">
-                                <input name="address" type="text" placeholder="Address">
+                                <input name="address" type="text" placeholder="Address" oninvalid="this.setCustomValidity('Please Enter Your Current Address')"
+ oninput="setCustomValidity('')" required>
                             </div>
                             <div class="input-box">
-                                <input name="phone" type="number" placeholder="Phone">
+                                <input id="ssn" type="tel" name="phone" placeholder="Phone : XXX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$" maxlength="12" oninvalid="this.setCustomValidity('Please Enter Phone Number In This Pattern : XXX-XXX-XXXX')"
+ oninput="setCustomValidity('')" required>
                             </div>
                             <div class="input-box">
-                                <input name="password" type="password" placeholder="Password">
+                                <input name="password" type="password" placeholder="Password" required>
                             </div>
                             <div class="input-box">
-                                <input name="confirmpassword" type="password" placeholder="Confirm Password">
+                                <input name="confirmpassword" type="password" placeholder="Confirm Password" oninvalid="this.setCustomValidity('Please Re-Enter The Same Password')"
+ oninput="setCustomValidity('')" required>
                             </div>
                         <!--
                             <div class="captcha-box">
@@ -770,6 +775,12 @@
     <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/placeholder.js"></script>
     <script type="text/javascript" src="js/coustem.js"></script>
+
+    <script>
+        $(":input").inputmask();
+
+        $("#ssn").inputmask({"mask": "(999) 999-9999"});
+    </script>
 </body>
 </html>
 

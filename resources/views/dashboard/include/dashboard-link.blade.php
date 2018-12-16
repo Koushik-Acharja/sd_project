@@ -33,6 +33,21 @@
     <link rel="stylesheet" type="text/css" media="screen"
      href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 -->
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Domine:400,700%7COpen+Sans:300,300i,400,400i,600,600i,700,700i%7CRoboto:400,500" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style type="text/css">
+    .bookin-info .note .inner-block .iconn {
+    position: absolute;
+    top: 17px;
+    left: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    text-align: center;
+}
+</style>
+<!-- ## Font -->
 
 <style type="text/css">
 .welll:nth-of-type ul li{ /* first well;*/

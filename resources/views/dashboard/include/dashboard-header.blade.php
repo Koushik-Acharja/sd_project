@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                    <a href="#" class="btn btn-primary create-event-btn" data-toggle="modal" data-target="#creat-event">Create New Event</a>
+                    <a href="{{ URL::to('create-an-event') }}" class="btn btn-primary create-event-btn">Create New Event</a>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
                     <div class="header-user-profile">

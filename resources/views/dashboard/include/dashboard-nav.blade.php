@@ -4,7 +4,7 @@
                     <nav class="topbar-nav">
                         <ul class="metismenu" id="metismenu">
                             <li>
-                                <a href="{{ URL::to('admin-panel') }}">
+                                <a href="{{ URL::to('user') }}">
                                     <span class="fa fa-tachometer"></span> DASHBOARD
                                 </a>
                             </li>
@@ -15,10 +15,7 @@
                                 </a>
                                 <ul aria-expanded="false">
                                     <li>
-                                        <a href="events-active.html">Active</a>
-                                    </li>
-                                    <li>
-                                        <a href="events-drafts.html">Draft</a>
+                                        <a href="{{ URL::to('draft') }}">Draft</a>
                                     </li>
                                     <li>
                                         <a href="my-events.html">My Event</a>

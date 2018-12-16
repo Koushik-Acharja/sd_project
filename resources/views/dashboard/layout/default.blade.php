@@ -26,7 +26,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
-    @include('dashboard.include.dashboard-create-an-event')
     @include('dashboard.include.dashboard-script')
   </body>
 

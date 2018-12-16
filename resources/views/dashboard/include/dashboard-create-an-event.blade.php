@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create An Event</title>
+    @include('dashboard.include.dashboard-link')
+</head>
+<body>
+    <a href="#creat-event" hidden="hidden" class="trigger-btn btn btn-primary create-event-btn" data-toggle="modal">Create New Event</a>
     <!-- Modal -->
 <form action="{{ URL::to('eventStore') }}" method="post">
                     {{ csrf_field() }}
@@ -6,9 +14,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>CREATE EVENT</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <a type="button" href="{{ URL::to('user') }}" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </a>
                 </div>
                 
                 <div class="modal-body">
@@ -132,7 +140,7 @@ onblur="this.placeholder = 'ii'" required/>
                                     </select>
                                 </div>
                             </div>
-
+                            <a type="button" href="{{ URL::to('user') }}" class="btn btn-secondary m-t-50">CLOSE</a>
                             <button type="button" class="btn btn-danger m-t-50" data-toggle="modal" data-target="#special-requirements">NEXT STEP</button>
 
                         </div>
@@ -271,23 +279,6 @@ onblur="this.placeholder = 'ii'" required/>
         </div>
     </div>
 </form>
-    <!-- #create event modal -->
-<body>
-<script>
-    $('#date').datetimepicker({
-        format: 'yyyy-mm-dd',
-        weekStart: 1,
-        todayBtn:  true,
-        autoclose: true,
-        todayHighlight: true,
-        startView: 2,
-        minView: 2,
-        forceParse: 0
-    });
-</script>
-
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker();
-    });
-</script></body>
+@include('dashboard.include.dashboard-script')
+</body>
+</html>
