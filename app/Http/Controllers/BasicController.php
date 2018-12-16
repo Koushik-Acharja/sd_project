@@ -158,7 +158,7 @@ class BasicController extends Controller
 
         if($obj->save()){
            echo 'Successfully Inserted';
-           return redirect('login');
+           return redirect('welcome');
        }
       }
       else {

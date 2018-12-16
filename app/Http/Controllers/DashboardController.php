@@ -98,15 +98,16 @@ class DashboardController extends Controller
       echo "$describe";
       echo "<br>";
 
-      $radio = $request->get('Radio2', 0);
-      if ($radio) {
-        echo 'Yes';
-      }else{
+      $radio = $request->get('customRadioInline2', 0);
+      //$radio = Input::get('customRadioInline2');
+      if ($radio == 'no') {
         echo "NoNoNo";
+      }else{
+        echo 'Yes';
       }
-      */
       
-
+      
+*/
       $title            = $request->title;
       $description      = $request->description;
       $dateini          = \Carbon\Carbon::parse($request->date);
@@ -133,7 +134,10 @@ class DashboardController extends Controller
       $obj->special_requirements = $eventrequirement;
       $obj->describe             = $describe;
 
-      if ($request->get('customRadioInline2', 0)) {
+      $abc = $request->get('customRadioInline2', 0);
+      if ($abc == 'no') {
+        $cateringinfo       = 'No';
+      }else{
         $cateringinfo       = 'Yes';
         $typeofcatering     = $request->typeofcatering;
         $specialrequirement = $request->specialrequirement;
@@ -144,8 +148,6 @@ class DashboardController extends Controller
         $obj->special_catering = $specialrequirement;
         $obj->time_of_food     = $timeoffood;
         $obj->catered_numbers  = $caterednumber;
-      }else{
-        $cateringinfo       = 'No';
       }
 
       $obj->catering_info = $cateringinfo;
@@ -153,9 +155,9 @@ class DashboardController extends Controller
       if($obj->save()){
         echo 'Successfully Inserted';
         return redirect('draft');
-      }
-      
+      }   
  }
+ 
  /*
   BasicController(){
   $rule = Rule::orderBy('sort_order', 'ASC')->get();
@@ -166,9 +168,9 @@ class DashboardController extends Controller
 
       return view('dashboard-create-an-event')->with(compact('rule','requirecheckbox','requireradio','eventtype','eventguest'));
  }
-*/
+
   public function date(){
     return view('dashboard.pages.date');
   }
-
+*/
 }
