@@ -128,7 +128,9 @@ class BasicController extends Controller
         return redirect('user');
       }
    }
-   
+   public function abcd(){
+    
+   }
 
    ////////////////////////////////////////////////////////////////
 
