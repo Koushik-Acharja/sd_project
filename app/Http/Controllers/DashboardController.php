@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 use App\Bookevent;
 use App\Rule;
 use App\EventRequirement;
@@ -22,8 +23,11 @@ class DashboardController extends Controller
   }
   public function draft()
   {
-    $obj = Bookevent::all();
-      return view('dashboard.pages.dashboard-draft')->with(compact('obj'));
+    $userid = session()->get('userid');
+    $obj = Bookevent::where('customer_id','=',$userid)
+                        ->where('booking_status','=','pending')
+                       ->get();
+    return view('dashboard.pages.dashboard-draft')->with(compact('obj'));
   }
     public function try(){
     $requireradio = EventRequirement::where('type','=','RadioButton')->get();
@@ -31,6 +35,26 @@ class DashboardController extends Controller
    }
     public function eventdraft(){
       return view('dashboard.pages.dashboard-event-draft');
+    }
+    public function deleteevent($id){
+      $obj = Bookevent::find($id);
+      if($obj->delete()){
+        return redirect('draft')->with('success', 'Event-Form successfully deleted');
+      }
+    }
+    public function booked($id){
+      $obj = Bookevent::find($id);
+      $obj->booking_status = 'booked';
+      if($obj->save()){
+      return redirect('my-event')->with('success', 'Event is successfully booked');
+      }
+    }
+    public function myevent(){
+      $userid = session()->get('userid');
+    $obj = Bookevent::where('customer_id','=',$userid)
+                       ->where('booking_status','=','booked')
+                       ->get();
+      return view('dashboard.pages.dashboard-my-event')->with(compact('obj'));
     }
     public function myprofile(){
       return view('dashboard.pages.profile');
@@ -108,6 +132,9 @@ class DashboardController extends Controller
       
       
 */
+      if(Session::has('userid')){
+          $userid = session()->get('userid');
+        }
       $title            = $request->title;
       $description      = $request->description;
       $dateini          = \Carbon\Carbon::parse($request->date);
@@ -122,6 +149,7 @@ class DashboardController extends Controller
       $describe         = $request->describe;
 
       $obj = new Bookevent;
+      $obj->customer_id          = $userid;
       $obj->title                = $title;
       $obj->description          = $description;
       $obj->day                  = $dateini->format('d / m / Y');
@@ -150,7 +178,8 @@ class DashboardController extends Controller
         $obj->catered_numbers  = $caterednumber;
       }
 
-      $obj->catering_info = $cateringinfo;
+      $obj->catering_info  = $cateringinfo;
+      $obj->booking_status = 'pending';
 
       if($obj->save()){
         echo 'Successfully Inserted';

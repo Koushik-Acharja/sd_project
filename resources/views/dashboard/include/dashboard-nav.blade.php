@@ -18,7 +18,7 @@
                                         <a href="{{ URL::to('draft') }}">Draft</a>
                                     </li>
                                     <li>
-                                        <a href="my-events.html">My Event</a>
+                                        <a href="{{ URL::to('my-event') }}">My Event</a>
                                     </li>
                                 </ul>
                             </li>

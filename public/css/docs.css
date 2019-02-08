@@ -1718,7 +1718,7 @@ translateY(-50%); -webkit-transform: translateY(-50%); -o-transform:translateY(-
 #friend_slider .owl-next {right:-20px;}
 .home-event .event-slider .owl-prev {left:-15px;}
 .home-event .event-slider .owl-next {right:-15px;}
-.banner .banner-text .search-title {margin-top:15px; padding-bottom:20px;}
+.banner .banner-text .search-title {margin-top:220px; padding-bottom:20px;}
 .banner .banner-text .banner-search {margin-top:35px; }
 }
 

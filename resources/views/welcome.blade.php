@@ -282,6 +282,7 @@
                     <div class="search-title">
                         <h1> Every Event Should be  <span>Perfect</span></h1>
                     </div>
+<!--
                     <div class="banner-search">
                         <div class="input-box">
                             <div class="icon icon-grid-view"></div>
@@ -300,6 +301,7 @@
                         </div>
                         <p>Create the Perfect Event</p> 
                     </div>
+-->
                 </div>
             </div>
         </section>
@@ -486,6 +488,7 @@
                 </div>
             </div>
         </section>
+<!--
         <section class="friends-block">
             <div class="container">
                 <div class="sub-title">
@@ -569,6 +572,7 @@
                 </div>
             </div>
         </section>
+-->
         <section class="news-view">
             <div class="container">
                 <div class="heading">
@@ -639,6 +643,7 @@
                 </div>
             </div>
         </section>
+<!--
         <section class="event-sponsor">
             <div class="container">
                 <div class="heading">
@@ -660,11 +665,12 @@
                 </div>
             </div>
         </section>
-        
+-->
         <footer id="footer">
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
+<!--
                         <div class="col-lg-3 col-sm-6 col-md-3">
                             <h5>Latest Updates</h5>
                             <div class="update-slide">
@@ -689,7 +695,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-md-3 text-center">
+-->
+                        <div style="width: 33%;" class="col-lg-3 col-sm-6 col-md-3 text-center">
                             <div class="footer-link">
                                 <h5>Company</h5>
                                 <ul>
@@ -701,7 +708,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-md-3">
+                        <div style="width: 33%;" class="col-lg-3 col-sm-6 col-md-3">
                             <div class="footer-contact">
                                 <h5>Contact us</h5>
                                 <div class="contact-slide">
@@ -719,7 +726,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-md-3">
+                        <div style="width: 33%;" class="col-lg-3 col-sm-6 col-md-3">
                             <div class="contact-form">
                                 <h5>Connect with us</h5>
                                 <p>We'll keep you informed and updated Sign up for our email newsletters </p>
@@ -739,6 +746,7 @@
                                         <input type="submit" value="Submit">
                                     </div>
                                 </div>
+<!--
                                 <div class="sosal-midiya">
                                     <ul>
                                         <li><a href="#"><span class="icon icon-facebook"></span></a></li>
@@ -749,6 +757,7 @@
                                         <li><a href="#"><span class="icon icon-play"></span></a></li>
                                     </ul>
                                 </div>
+-->
                             </div>
                         </div>
                     </div>
