@@ -19,6 +19,11 @@ class BasicController extends Controller
         //
     }
 
+      public function about(){
+      return view('about');
+   }
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -95,7 +100,8 @@ class BasicController extends Controller
     public function welcome(){
       return view('welcome');
    }
-    
+
+   
     public function login(){
       return view('try');
    }

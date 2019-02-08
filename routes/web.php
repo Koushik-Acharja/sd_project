@@ -14,8 +14,10 @@
 Route::get('/d', function () {
     return view('dashboard.pages.extend');
 });
+
 Route::get('/', 'BasicController@welcome');
 Route::get('welcome', 'BasicController@welcome');
+Route::get('about', 'BasicController@about');
 /*
 Route::get('/','DashboardController@try');
 Route::get('trytest/{id}','BasicController@trytest');
