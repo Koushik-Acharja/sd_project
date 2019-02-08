@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    @include('dashboard.include.dashboard-link')
-    <link href="css/docs.css" rel="stylesheet"><!--  template structure css -->
-    <link rel="shortcut icon" href="images/Favicon.ico">
-  </head>
-
-  <body id="page-top">
-
-    <div class="header">
-        @include('dashboard.include.dashboard-header')
+@extends('backend.layouts.default')
+@section('content')
+<ol class="breadcrumb">
+	<li class="breadcrumb-item">
+	  <a href="{{ URL::to('admin') }}">Dashboard</a>
+	</li>
+	<li class="breadcrumb-item active">Overview</li>
+</ol>
+@if(session('success'))
+    <div class="alert alert-success" style="margin-top: 20px">
+      {{ session('success') }}
     </div>
-    <!-- /# header -->
-    <div class="menu">
-        @include('dashboard.include.dashboard-nav')
-    </div>
-    
-    <div class="page-title">
-        @include('dashboard.pages.dashboard-element')
-    </div>
-    
-    @if(session('success'))
-        <div class="alert alert-success" style="margin-top: 20px;    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto; max-width: 1116px;">
-          {{ session('success') }}
-        </div> 
-        @endif
-<div class="content" style="background-color: #efefef;">
-            <div class="container"  style="padding-bottom: 80px;">
+@endif
+<div class="content" style="
+    font-family: Montserrat, sans-serif; font-weight: 500;">
+            <div class="container" style="padding-bottom: 80px;">
                 @if($obj)
                 @foreach($obj as $obj)
-                <div class="bookin-info table-responsive">
+                <div class="bookin-info table-responsive" style="background-color: #efefef;">
                 	<table class="bookin-table">
                         <tbody>
                         <tr>
-                            <th colspan="6" class="table-heading">Event Name : {{ $obj->title }}<a href="{{ URL::to('/delete-event/'.$obj->id) }}" class="icon icon-delete float-right" style="margin-left: 15px;">Delete</a><!--<a href="#" class="icon icon-delete">Edit</a>--></th>
+                            <th colspan="6" class="table-heading">Event Name : {{ $obj->title }}<a href="{{ URL::to('/accomplished/'.$obj->id) }}" class="icon icon-delete float-right" style="margin-left: 15px;">Accomplished</a><!--<a href="#" class="icon icon-delete">Edit</a>--></th>
                         </tr>
                         <tr>
                             <td class="first Theading">Event Description</td>
@@ -188,7 +171,7 @@
                         </tr>
                     </tbody>
                 </table>
-                @if($obj->total_amount)
+                </table>
                     <table class="bookinTotal">
                         <tr>
                             <td class="subTotal">Subtotal</td>
@@ -199,37 +182,9 @@
                             <td class="amount">৳ {{ $obj->after_discount }}</td>
                         </tr>
                     </table>
-                    <div class="bookinRow">
-                        
-                        <a 
-style="border: solid 1px #f15b22;
-border-radius: 3px;
-box-shadow: inset 0px 1px 0px #e0a97f;
-background: #f15b22;
-color: #fff;" href="{{ URL::to('/booked/'.$obj->id) }}" class="btn eventbtn">Book Now</a>
-                    </div>
-                    
-                    <div class="note">
-                        <div class="inner-block">
-                            <div class="iconn material-icons" style=" color: #f15b22;">priority_high</div>
-                            <label>Important Information</label>
-                            <p>Please carry any valid photo id proof at the venue</p>
-                        </div>
-                    </div>
-                    @else
-                    <div class="note">
-                        <div class="inner-block">
-                            <div class="iconn material-icons" style=" color: #f15b22;">priority_high</div>
-                            <label>Important Information</label>
-                            <p>Please wait for admin's approval and amount bill</p>
-                        </div>
-                    </div>
-                    @endif
                 </div>
                 @endforeach
                 @endif
             </div>
         </div>
-        @include('dashboard.include.dashboard-script')
-    </body>
-</html>
+@stop

@@ -1,8 +1,5 @@
 @extends('dashboard.layout.default')
 @section('content')
-    <div class="page-title">
-        @include('dashboard.pages.dashboard-element')
-    </div>
     <div class="content-body">
         <div class="container">
             <div class="row">

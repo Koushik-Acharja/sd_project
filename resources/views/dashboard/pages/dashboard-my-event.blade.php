@@ -15,11 +15,10 @@
     <div class="menu">
         @include('dashboard.include.dashboard-nav')
     </div>
-    
     <div class="page-title">
         @include('dashboard.pages.dashboard-element')
     </div>
-    
+
     @if(session('success'))
         <div class="alert alert-success" style="margin-top: 20px;    width: 100%;
     padding-right: 15px;
@@ -37,7 +36,7 @@
                 	<table class="bookin-table">
                         <tbody>
                         <tr>
-                            <th colspan="6" class="table-heading">Event Name : {{ $obj->title }}<a href="{{ URL::to('/delete-event/'.$obj->id) }}" class="icon icon-delete float-right" style="margin-left: 15px;">Delete</a><!--<a href="#" class="icon icon-delete">Edit</a>--></th>
+                            <th colspan="6" class="table-heading">Event Name : {{ $obj->title }}<!--<a href="{{ URL::to('/delete-event/'.$obj->id) }}" class="icon icon-delete float-right" style="margin-left: 15px;">Delete</a><a href="#" class="icon icon-delete">Edit</a>--></th>
                         </tr>
                         <tr>
                             <td class="first Theading">Event Description</td>
@@ -188,46 +187,18 @@
                         </tr>
                     </tbody>
                 </table>
-                @if($obj->total_amount)
-                    <table class="bookinTotal">
-                        <tr>
-                            <td class="subTotal">Subtotal</td>
-                            <td class="amount subTotal">৳ {{ $obj->total_amount }}</td>
-                        </tr>
-                        <tr>
-                            <td >Min. Booking Amount to pay</td>
-                            <td class="amount">৳ {{ $obj->after_discount }}</td>
-                        </tr>
-                    </table>
-                    <div class="bookinRow">
-                        
-                        <a 
-style="border: solid 1px #f15b22;
-border-radius: 3px;
-box-shadow: inset 0px 1px 0px #e0a97f;
-background: #f15b22;
-color: #fff;" href="{{ URL::to('/booked/'.$obj->id) }}" class="btn eventbtn">Book Now</a>
-                    </div>
-                    
-                    <div class="note">
-                        <div class="inner-block">
-                            <div class="iconn material-icons" style=" color: #f15b22;">priority_high</div>
-                            <label>Important Information</label>
-                            <p>Please carry any valid photo id proof at the venue</p>
-                        </div>
-                    </div>
-                    @else
-                    <div class="note">
-                        <div class="inner-block">
-                            <div class="iconn material-icons" style=" color: #f15b22;">priority_high</div>
-                            <label>Important Information</label>
-                            <p>Please wait for admin's approval and amount bill</p>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-                @endforeach
-                @endif
+                <table class="bookinTotal">
+                    <tr>
+                        <td class="subTotal">Subtotal</td>
+                        <td class="amount subTotal">৳ {{ $obj->total_amount }}</td>
+                    </tr>
+                    <tr>
+                        <td >Min. Booking Amount to pay</td>
+                        <td class="amount">৳ {{ $obj->after_discount }}</td>
+                    </tr>
+                </table>
+    @endforeach
+    @endif
             </div>
         </div>
         @include('dashboard.include.dashboard-script')

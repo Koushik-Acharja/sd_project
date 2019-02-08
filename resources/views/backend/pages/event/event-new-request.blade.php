@@ -6,7 +6,16 @@
 	</li>
 	<li class="breadcrumb-item active">Overview</li>
 </ol>
-
+@if(session('success'))
+    <div class="alert alert-success" style="margin-top: 20px">
+      {{ session('success') }}
+    </div>
+@endif
+@if(session('error'))
+    <div class="alert alert-danger" style="margin-top: 20px;">
+      {{ session('error') }}
+    </div> 
+@endif
 <div class="content" style="
     font-family: Montserrat, sans-serif; font-weight: 500;>
             <div class="container"  style=" padding-bottom: 80px;">
@@ -16,7 +25,7 @@
                 	<table class="bookin-table">
                         <tbody>
                         <tr>
-                            <th colspan="6" class="table-heading">Event Name : {{ $obj->title }}<a href="#" class="icon icon-delete float-right" style="margin-left: 15px;">Delete</a><a href="#" class="icon icon-delete">Edit</a></th>
+                            <th colspan="6" class="table-heading">Event Name : {{ $obj->title }}<a href="{{ URL::to('/delete-event-by-admin/'.$obj->id) }}" class="icon icon-delete float-right" style="margin-left: 15px;">Delete</a><!--<a href="#" class="icon icon-delete">Edit</a>--></th>
                         </tr>
                         <tr>
                             <td class="first Theading">Event Description</td>
@@ -168,37 +177,27 @@
                     </tbody>
                 </table>
                 </table>
-
+<form action="{{ URL::to('/payamount/'.$obj->id) }}" method="post">
+    {{ csrf_field() }}
                     <table class="bookinTotal">
                         <tr>
                             <td class="subTotal">Subtotal</td>
-                            <td class="amount subTotal">৳ <input type="text" name="subtotal" placeholder="Input Total Amount" size="16" align="right" direction:RTL></td>
+                            <td class="amount subTotal">৳ <input type="text" name="totalamount" value="{{ $obj->total_amount }}" placeholder="Input Total Amount" size="16" align="right" direction:RTL></td>
                         </tr>
                         <tr>
                             <td >Min. Booking Amount to pay</td>
-                            <td class="amount">৳ <input type="text" name="afterdiscount" placeholder="After Discount Pay" size="16" align="right" direction:RTL></td>
+                            <td class="amount">৳ <input type="text" name="afterdiscount" value="{{ $obj->after_discount }}" placeholder="After Discount Pay" size="16" align="right" direction:RTL></td>
                         </tr>
                     </table>
                     <div class="bookinRow">
-                        <div class="input-box">
-                            <label>Your Name :</label>
-                            <input type="text" placeholder="User name">
-                        </div>
-                        <div class="input-box">
-                            <label>Address :</label>
-                            <input type="text" placeholder="Home Address">
-                        </div>
-                        <div class="input-box">
-                            <label>Phone :</label>
-                            <input type="text" placeholder="1234568970">
-                        </div>
-                        <a 
+                        <button type="submit" 
 style="border: solid 1px #f15b22;
 border-radius: 3px;
 box-shadow: inset 0px 1px 0px #e0a97f;
 background: #f15b22;
-color: #fff;" href="#" class="btn eventbtn">Book Now</a>
+color: #fff;" class="btn eventbtn">Send Amount</button>
                     </div>
+</form>
                 </div>
                 @endforeach
                 @endif

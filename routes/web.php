@@ -56,6 +56,9 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('create-an-event','DashboardController@createanevent');
 	Route::get('draft', 'DashboardController@draft');
 	Route::get('dashboard-event-draft', 'DashboardController@eventdraft');
+	Route::get('delete-event/{id}', 'DashboardController@deleteevent');
+	Route::get('booked/{id}', 'DashboardController@booked');
+	Route::get('my-event', 'DashboardController@myevent');
 	Route::get('myprofile', 'DashboardController@myprofile');
 	Route::get('edit-profile', 'DashboardController@editprofile');
 	Route::get('calender', 'DashboardController@calender');
@@ -67,7 +70,10 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('alluser', 'Admin\AccessController@alluser');
 
 	Route::get('event-new-request', 'Admin\EventController@eventnewrequest');
+	Route::post('payamount/{id}','Admin\EventController@payamount');
+	Route::get('delete-event-by-admin/{id}', 'Admin\EventController@deleteeventbyadmin');
 	Route::get('event-in-progress', 'Admin\EventController@eventinprogress');
+	Route::get('accomplished/{id}','Admin\EventController@accomplished');
 	Route::get('event-history', 'Admin\EventController@eventhistory');
 
 	Route::get('alladmin-add', 'Admin\AccessController@alladminadd');

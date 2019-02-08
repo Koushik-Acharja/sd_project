@@ -15,6 +15,7 @@ class CreateBookeventsTable extends Migration
     {
         Schema::create('bookevents', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('customer_id', 500);
             $table->string('title', 500);
             $table->string('description', 3000)->nullable();
             $table->string('day', 50);
@@ -31,6 +32,9 @@ class CreateBookeventsTable extends Migration
             $table->string('special_catering', 800)->nullable();
             $table->string('time_of_food', 100)->nullable();
             $table->string('catered_numbers', 60)->nullable();
+            $table->string('total_amount')->nullable();
+            $table->string('after_discount')->nullable();
+            $table->string('booking_status',30)->nullable();
             $table->timestamps();
         });
     }

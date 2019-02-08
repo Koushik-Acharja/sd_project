@@ -13,7 +13,9 @@
     <div class="menu">
         @include('dashboard.include.dashboard-nav')
     </div>
-    
+    <div class="page-title">
+        @include('dashboard.pages.dashboard-element')
+    </div>
 
     <div id="wrapper">
       <div id="content-wrapper">
