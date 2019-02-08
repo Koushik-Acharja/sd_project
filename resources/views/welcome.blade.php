@@ -397,90 +397,73 @@
                                 <div class="event-box">
                                     <div class="img">
                                         <a href="#">
-                                            <img src="images/event-img/event-img1.jpg" alt="">
+                                            <img src="images/event-img/ct.jpg" alt="" height="300">
                                             <span class="capsan">
-                                                <span>Event Planner</span>
+                                                <span>Caterers</span>
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="name">Event Planner</div>
+                                    <div class="name">Caterers</div>
                                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
-                                    <a href="#">Readmore</a>
+                                  
                                 </div>
                             </div>
+                              <div class="item">
+                                <div class="event-box">
+                                    <div class="img">
+                                        <a href="#">
+                                            <img src="images/event-img/dr.jpg" alt="" height="300">
+                                            <span class="capsan">
+                                                <span>Decor & Florists</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="name">Decor & Florists</div>
+                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
+                           
+                                </div>
+                            </div>                          
                             <div class="item">
                                 <div class="event-box">
                                     <div class="img">
                                         <a href="#">
-                                            <img src="images/event-img/event-img2.jpg" alt="">
+                                            <img src="images/event-img/wc.jpg"alt=""height="300">
                                             <span class="capsan">
-                                                <span>Corporate Events</span>
+                                                <span>Wedding Cards</span>
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="name">Corporate Events</div>
+                                    <div class="name">Wedding Cards</div>
+                                    <p>From weddings to company retreats, event planning takes good coordination skills to manage the details ... Your message has been sent!,</p>
+                                 
+                                </div>
+                            </div>                     
+                            <div class="item">
+                                <div  class="event-box" >
+                                    <div class="img">
+                                        <a href="#">
+                                            <img src="images/event-img/dj.jpg" alt=""  height="300">
+                                            <span class="capsan">
+                                                <span>Dj</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="name">Dj</div>
                                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
-                                    <a href="#">Readmore</a>
                                 </div>
                             </div>
-                            <div class="item">
+                             <div class="item">
                                 <div class="event-box">
                                     <div class="img">
                                         <a href="#">
-                                            <img src="images/event-img/event-img3.jpg" alt="">
+                                            <img src="images/event-img/event-img5.jpg" alt="" height="315">
                                             <span class="capsan">
-                                                <span>Birthday Party</span>
+                                                <span>Photographers</span>
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="name">Birthday Party</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
-                                    <a href="#">Readmore</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="event-box">
-                                    <div class="img">
-                                        <a href="#">
-                                            <img src="images/event-img/event-img1.jpg" alt="">
-                                            <span class="capsan">
-                                                <span>Event Planner</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="name">Event Planner</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
-                                    <a href="#">Readmore</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="event-box">
-                                    <div class="img">
-                                        <a href="#">
-                                            <img src="images/event-img/event-img2.jpg" alt="">
-                                            <span class="capsan">
-                                                <span>Corporate Events</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="name">Corporate Events</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
-                                    <a href="#">Readmore</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="event-box">
-                                    <div class="img">
-                                        <a href="#">
-                                            <img src="images/event-img/event-img3.jpg" alt="">
-                                            <span class="capsan">
-                                                <span>Birthday Party</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="name">Birthday Party</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
-                                    <a href="#">Readmore</a>
+                                    <div class="name">Photographers & Videographers</div>
+                                    <p>Event photography is the practice of photographing guests and occurrences at any Event or occasion where one may hire a photographer</p>
                                 </div>
                             </div>
                         </div>
