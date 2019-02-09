@@ -25,7 +25,6 @@ class CreateEventController extends Controller
     	$obj = new EventRequirement();
     	$obj->option = $request->option;
     	$obj->sort_order = $request->sort_order;
-    	$obj->type = $request->type;
     	if($obj->save())
     	{
     		return redirect()->to('/requirements')->with('success', 'Successfully Added');
@@ -45,7 +44,6 @@ class CreateEventController extends Controller
     	$requirements = EventRequirement::find($id);
     	$requirements->option = $request->option;
     	$requirements->sort_order = $request->sort_order;
-    	$requirements->type = $request->type;
     	if($requirements->save())
     	{
     		return redirect()->to('/requirements')->with('success', 'Successfully Updated');

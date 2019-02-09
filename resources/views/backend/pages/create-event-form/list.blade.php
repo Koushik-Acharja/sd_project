@@ -32,7 +32,6 @@
 	        <tr>
 	          <th>Options</th>
 	          <th>Sort Order</th>
-	          <th>Type</th>
 	          <th colspan="2">Action</th>
 	        </tr>
 	      </thead>
@@ -42,7 +41,6 @@
 					<tr>
 						<td>{{ $d->option }}</td>
 						<td>{{ $d->sort_order }}</td>
-						<td>{{ $d->type }}</td>
 						<td><a class="btn btn-secondary btn-sm" href="{{ URL::to('/requirements-edit/'.$d->id) }}">Edit</a></td>
 						<td><button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm">Delete</button></td>
 					</tr>

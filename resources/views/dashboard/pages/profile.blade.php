@@ -1,23 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-    @include('dashboard-link')
-</head>
-<body>
-    <div class="header">
-        @include('dashboard-header')
+@extends('dashboard.layout.default')
+@section('content')
+@if(session('success'))
+    <div class="alert alert-success" style="margin-top: 20px">
+      {{ session('success') }}
     </div>
-    <!-- /# header -->
-    <div class="menu">
-        @include('dashboard-nav')
-    </div>
-    <!-- /# menu -->
-    <div class="page-title">
-        @include('dashboard-element')
-    </div>
-    <!-- /# element -->
-
+@endif
     <!-- content area -->
     <div class="content-body">
         <div class="container">
@@ -33,32 +20,30 @@
                             <div class="modal-content">
 
                                 <div class="row">
-                                    <div class="col-xl-8 p-r-0">
+                                    @if($info)
+                                    <div class="col-xl-12">
                                         <div class="modal-right">
                                             <div class="media personal-profile">
                                                 <img class="m-r-30 img-fluid" src="dashboard/images/ppl.png" alt="placeholder image">
                                                 <div class="media-body">
-                                                    <h3 class="mt-0">Anamika</h3>
-                                                    <p class="denger"><i class="fa fa-map-marker"></i>Location</p>
-                                                    <p class="denger">www.yoursite.com</p>
-                                                    <p>Language : English</p>
+                                                    <h3 class="mt-0">{{ $info->name }}</h3>
+                                                    <p class="denger"><i class="fa fa-map-marker"></i>{{ $info->address }}</p>
+                                                    <p class="denger">{{ $info->email }}</p>
+                                                    <p>Phone : {{ $info->phone }}</p>
                                                 </div>
                                                 <button class="btn btn-secondary" onclick="location.href='{{ url('edit-profile') }}'">EDIT</button>
                                             </div>
 
                                             <div class="modal-about-area">
                                                 <h3>ABOUT</h3>
-                                                <p>Cras sed orci sodales enim porttitor feugiat et eget mi. Donec lorem dolor,
-                                                    ornare eget magna id, finibus sollicitudin augue. Nunc eleifend ullamcorper
-                                                    enim, eget rhoncus leo malesuada sed. Nam orci metus, volutpat eget est
-                                                    posuere, egestas suscipit nisi. Proin non turpis mollis, fermentum urna
-                                                    in, ornare leo. Nunc sollicitudin eu metus eget posuere.</p>
-
+                                                <p>{{ $info->about }}</p>
+<!--
                                                 <i class="fa fa-facebook"></i>
                                                 <i class="fa fa-twitter"></i>
                                                 <i class="fa fa-instagram"></i>
+-->
                                             </div>
-
+<!--
                                             <div class="modal-tags">
                                                 <h3>INTEREST</h3>
                                                 <button class="btn btn-outline-secondary btn-rounded">FOOD</button>
@@ -83,14 +68,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+-->
                                         </div>
-
-
                                     </div>
+                                    @endif
+                                    <!--
                                     <div class="col-xl-4 p-l-0">
                                         <div class="modal-left">
-                                            <!-- Nav tabs -->
+                                            <!- Nav tabs ->
 
                                             <ul class="nav nav-tabs" role="tablist">
                                                 <li class="nav-item">
@@ -187,6 +172,7 @@
 
 
                                     </div>
+                                -->
                                 </div>
 
                             </div>
@@ -200,11 +186,4 @@
         </div>
     </div>
     <!-- #content area -->
-
-
-    @include('dashboard-create-an-event')
-    @include('dashboard-script')
-
-</body>
-
-</html>
+@stop

@@ -17,6 +17,13 @@
                 @if($obj)
                 @foreach($obj as $obj)
                 <div class="bookin-info table-responsive" style="background-color: #efefef;">
+                    <table class="bookin-table">
+                        <tbody>
+                        <tr>
+                            <th colspan="6" class="table-heading" style="color: #007bff;">User ID : {{ $obj->id }}</th>
+                        </tr>
+                        </tbody>
+                    </table>
                 	<table class="bookin-table">
                         <tbody>
                         <tr>

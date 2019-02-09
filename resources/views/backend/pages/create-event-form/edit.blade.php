@@ -26,13 +26,6 @@
 	      <label>Sort Order</label>
 	      <input type="number" value="{{ $uprequirement->sort_order }}" name="sort_order" class="form-control">
 	    </div>
-	    <div class="form-group">
-	      <label>Option Type</label>
-	      <select  id="type" class="form-control drop" name="type">
-			<option value="CheckBox">CheckBox</option>
-			<option value="RadioButton">RadioButton</option>
-		  </select>
-	    </div>
 	    <button type="submit" class="btn btn-success">Update</button>
 	  </form>
 	</div>

@@ -1,5 +1,6 @@
 @extends('dashboard.layout.default')
 @section('content')
+<!--
     <div class="content-body">
         <div class="container">
             <div class="row">
@@ -257,4 +258,5 @@
 
         </div>
     </div>
+-->
 @stop

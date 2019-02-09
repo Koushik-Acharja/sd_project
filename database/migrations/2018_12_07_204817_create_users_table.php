@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
             $table->string('phone', 100);
             $table->string('address', 100);
+            $table->string('about',700)->nullable();
             $table->string('role', 100)->comment('0=>admin, 1=user');
             $table->timestamps();
         });
