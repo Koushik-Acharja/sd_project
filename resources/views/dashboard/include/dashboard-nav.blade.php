@@ -10,9 +10,15 @@
                             </li>
                             <!--<li class="active">-->
                             <li>
-                                <a class="has-arrow" href="#" aria-expanded="false">
-                                    <span class="fa fa-calendar-check-o"></span> Events
+                                <a href="{{ URL::to('draft') }}" aria-expanded="false">
+                                    <span class="fa fa-calendar-check-o"></span>Draft
                                 </a>
+                            </li>
+                            <li>
+                                <a href="{{ URL::to('my-event') }}" aria-expanded="false">
+                                    <span class="fa fa-calendar-check-o"></span>My Events
+                                </a>
+                            <!--
                                 <ul aria-expanded="false">
                                     <li>
                                         <a href="{{ URL::to('draft') }}">Draft</a>
@@ -21,7 +27,9 @@
                                         <a href="{{ URL::to('my-event') }}">My Event</a>
                                     </li>
                                 </ul>
+                            -->
                             </li>
+                            <!--
                             <li>
                                 <a href="peoples.html">
                                     <span class="fa fa-users"></span> Peoples
@@ -40,11 +48,13 @@
                                     </li>
                                 </ul>
                             </li>
+                        -->
                             <li>
                                 <a href="{{ URL::to('calender') }}">
                                     <span class="fa fa-calendar"></span> Calender
                                 </a>
                             </li>
+                        <!--
                             <li>
                                 <a class="has-arrow" href="#" aria-expanded="false">
                                     <span class="fa fa-cog"></span> Settings
@@ -64,6 +74,7 @@
                                     </li>
                                 </ul>
                             </li>
+                        -->
                         </ul>
                     </nav>
                 </div>

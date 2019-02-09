@@ -165,6 +165,8 @@ class BasicController extends Controller
         // redirect to previous page and show the error message
         // see how to pass data using 'with' in laravel
       }
+
+      
     
  }
 

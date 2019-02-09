@@ -78,6 +78,7 @@
                                     <a href="{{ URL::to('/') }}">Home</a>
                                 </li>
                                 <li><a href="aboutUs.html">About Us</a></li>
+                                <!--
                                 <li>
                                     <a href="services.html">Services <span class="icon icon-arrow-down"></span></a>
                                     <ul>
@@ -126,6 +127,7 @@
                                         <li><a href="page-404.html">404 page</a></li>
                                     </ul>
                                 </li>
+                            -->
                             <!--
                                 <li><a href="{{ URL::to('login') }}">Login </a></li>
                                 <li><a href="{{ URL::to('signup') }}">Register </a></li>
@@ -133,10 +135,10 @@
                 @if(!session('userid'))
                                 <li><a href="javascript:;" data-toggle="modal" data-target="#loginModal">Login</a></li>
                                 <li><a href="javascript:;" data-toggle="modal" data-target="#registrationModal">Registration</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="#footer">Contact us</a></li>
                 @else
                                 <li><a href="{{ URL::to('eventlog') }}">Make An Event</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="#footer">Contact us</a></li>
                                 <li><a href="{{  URL::to('logout') }}">Logout</a></li>
                 @endif
                             </ul>
@@ -165,6 +167,7 @@
                     <div class="left-img"><img src="images/login-leftImg.png" alt=""></div>
                     <div class="right-info">
                         <h1>Login</h1>
+                        <!--
                         <div class="sosal-midiyaLogin">
                             <div class="facebook-link">
                                 <a href="#"><span class="icon icon-facebook"></span>Sign in with Facebook</a>
@@ -173,6 +176,7 @@
                                 <a href="#"><span class="icon icon-google-plus"></span>Sign in with Google+</a>
                             </div>
                         </div>
+                    -->
                         <div class="or-text"><span>OR</span></div>
                         <form action="{{ URL::to('loginStore') }}" method="post">
                             {{ csrf_field() }}
@@ -237,7 +241,7 @@
  oninput="setCustomValidity('')" required>
                             </div>
                             <div class="input-box">
-                                <input id="ssn" type="tel" name="phone" placeholder="Phone : XXX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$" maxlength="12" oninvalid="this.setCustomValidity('Please Enter Phone Number In This Pattern : XXX-XXX-XXXX')"
+                                <input id="ssn" type="tel" name="phone" placeholder="Phone : 0123456789" pattern="^\d{10}$" maxlength="12" oninvalid="this.setCustomValidity('Please Enter Your Phone Number : 0123456789')"
  oninput="setCustomValidity('')" required>
                             </div>
                             <div class="input-box">
@@ -317,63 +321,33 @@
                 <div class="service-catagari">
                     <ul>
                         <li>
-                            <a href="services.html">
+                            <a href="#">
                                 <span class="icon icon-caterers"></span>
                                 <span class="text">Caterers</span>
                             </a>
                         </li>
                         <li>
-                            <a href="services.html">
+                            <a href="#">
                                 <span class="icon icon-flower-pot"></span>
                                 <span class="text">Decor & Florists</span>
                             </a>
                         </li>
                         <li>
-                            <a href="services.html">
-                                <span class="icon icon-calander"></span>
-                                <span class="text">Event Planner</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <span class="icon icon-beauty"></span>
-                                <span class="text">Make-up and Hair</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
+                            <a href="#">
                                 <span class="icon icon-wedding-card"></span>
                                 <span class="text">Wedding Cards</span>
                             </a>
                         </li>
                         <li>
-                            <a href="services.html">
-                                <span class="icon icon-mehandi"></span>
-                                <span class="text">Mehandi</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <span class="icon icon-cake"></span>
-                                <span class="text">Cakes</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
+                            <a href="#">
                                 <span class="icon icon-music"></span>
                                 <span class="text">DJ</span>
                             </a>
                         </li>
                         <li>
-                            <a href="services.html">
+                            <a href="#">
                                 <span class="icon icon-camera"></span>
-                                <span class="text">Photographers &amp; Videographers</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <span class="icon icon-glass"></span>
-                                <span class="text">Entertainment</span>
+                                <span class="text">Photographers</span>
                             </a>
                         </li>
                     </ul>

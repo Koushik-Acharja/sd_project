@@ -17,7 +17,6 @@ class CreateEventRequirementsTable extends Migration
             $table->increments('id');
             $table->string('option');            
             $table->integer('sort_order')->nullable();
-            $table->string('type');
             $table->timestamps();
         });
     }

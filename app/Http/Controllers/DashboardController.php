@@ -10,13 +10,14 @@ use App\EventRequirement;
 use App\EventType;
 use App\EventGuest;
 use App\CheckBox;
+use App\User;
 
 class DashboardController extends Controller
 {
   public function createanevent(){
     $rule = Rule::orderBy('sort_order', 'ASC')->get();
       $requirecheckbox = EventRequirement::all();
-      $requireradio = EventRequirement::where('type','=','RadioButton')->get();
+      //$requireradio = EventRequirement::where('type','=','RadioButton')->get();
       $eventtype = EventType::all();
       $eventguest = EventGuest::all();
     return view('dashboard.include.dashboard-create-an-event')->with(compact('rule','requirecheckbox','requireradio','eventtype','eventguest'));
@@ -29,10 +30,12 @@ class DashboardController extends Controller
                        ->get();
     return view('dashboard.pages.dashboard-draft')->with(compact('obj'));
   }
+  /*
     public function try(){
     $requireradio = EventRequirement::where('type','=','RadioButton')->get();
     return view('extend')->with(compact('requireradio'));
    }
+   */
     public function eventdraft(){
       return view('dashboard.pages.dashboard-event-draft');
     }
@@ -57,18 +60,40 @@ class DashboardController extends Controller
       return view('dashboard.pages.dashboard-my-event')->with(compact('obj'));
     }
     public function myprofile(){
-      return view('dashboard.pages.profile');
+      $userid = session()->get('userid');
+      $info = User::where('id','=',$userid)
+                    ->first();
+      return view('dashboard.pages.profile')->with(compact('info'));
    }
    public function editprofile(){
-    return view('dashboard.pages.edit-profile');
+    $userid = session()->get('userid');
+      $info = User::where('id','=',$userid)
+                    ->first();
+    return view('dashboard.pages.edit-profile')->with(compact('info'));
    }
+   public function updateinfo(Request $request,$id){
+        //$userid = session()->get('userid');
+        //$obj = User::where('id','=',$userid)->first();
+        $obj = User::find($id);
+
+        $obj->name      = $request->val_username;
+        $obj->email     = $request->val_email;
+        $obj->password  = $request->val_password;
+        $obj->about     = $request->val_about;
+        $obj->phone     = $request->val_phone;
+        $obj->address   = $request->val_address;
+
+        if($obj->save()){
+          return redirect('myprofile')->with('success', 'Profile successfully updated');
+        }
+      }
    public function calender(){
     return view('dashboard.pages.calender');
    }
    public function dashboard(){
       $rule = Rule::orderBy('sort_order', 'ASC')->get();
-      $requirecheckbox = EventRequirement::where('type','=','CheckBox')->get();
-      $requireradio = EventRequirement::where('type','=','RadioButton')->get();
+      //$requirecheckbox = EventRequirement::where('type','=','CheckBox')->get();
+      //$requireradio = EventRequirement::where('type','=','RadioButton')->get();
       $eventtype = EventType::all();
       $eventguest = EventGuest::all();
 

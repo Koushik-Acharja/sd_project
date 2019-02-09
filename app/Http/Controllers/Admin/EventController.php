@@ -30,11 +30,8 @@ class EventController extends Controller
     }
     public function eventinprogress(){
     	$obj = Bookevent::where('booking_status','=','booked')->get();
-        if($obj){
+        
         return view('backend.pages.event.event-in-progress')->with(compact('obj'));
-        }else{
-            return view('backend.pages.event.event-in-progress');
-        }
     }
     
     public function accomplished($id){

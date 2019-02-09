@@ -42,11 +42,11 @@ Route::get('/signup', function () {
 });
 */
 Route::get('logout', 'BasicController@logout');
-
+/*
 Route::get('login', 'BasicController@login');
-Route::post('loginStore', 'BasicController@loginStore');
-
 Route::get('signup', 'BasicController@signup');
+*/
+Route::post('loginStore', 'BasicController@loginStore');
 Route::post('signupStore','BasicController@signupStore');
 
 Route::group(['middleware' => 'checkloggedin'], function(){
@@ -61,6 +61,7 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('my-event', 'DashboardController@myevent');
 	Route::get('myprofile', 'DashboardController@myprofile');
 	Route::get('edit-profile', 'DashboardController@editprofile');
+	Route::post('updateinfo/{$id}','DashboardController@updateinfo');
 	Route::get('calender', 'DashboardController@calender');
 	Route::post('eventStore','DashboardController@eventStore');
 
@@ -68,6 +69,10 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 
 	Route::get('alladmin', 'Admin\AccessController@alladmin');
 	Route::get('alluser', 'Admin\AccessController@alluser');
+
+	Route::get('event-service','Admin\ServiceController@eventservice');
+	Route::get('event-service-add','Admin\ServiceController@eventserviceadd');
+	Route::post('service-store','Admin\ServiceController@servicestore');
 
 	Route::get('event-new-request', 'Admin\EventController@eventnewrequest');
 	Route::post('payamount/{id}','Admin\EventController@payamount');
