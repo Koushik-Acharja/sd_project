@@ -49,7 +49,11 @@ Route::get('signup', 'BasicController@signup');
 Route::post('loginStore', 'BasicController@loginStore');
 Route::post('signupStore','BasicController@signupStore');
 
+Route::get('about','BasicController@about');
+
 Route::group(['middleware' => 'checkloggedin'], function(){
+
+
 	Route::get('eventlog','BasicController@eventlog');
 
 	Route::get('user', 'DashboardController@dashboard');
@@ -70,9 +74,13 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('alladmin', 'Admin\AccessController@alladmin');
 	Route::get('alluser', 'Admin\AccessController@alluser');
 
-	Route::get('event-service','Admin\ServiceController@eventservice');
-	Route::get('event-service-add','Admin\ServiceController@eventserviceadd');
+	Route::get('all-services','Admin\ServiceController@allservice');
 	Route::post('service-store','Admin\ServiceController@servicestore');
+	Route::get('service-delete/{id}', 'Admin\ServiceController@servicedelete');
+
+	Route::get('event-overview','Admin\OverviewController@eventoverview');
+	Route::get('event-overview-add','Admin\OverviewController@eventoverviewadd');
+	Route::post('overview-store','Admin\OverviewController@overviewstore');
 
 	Route::get('event-new-request', 'Admin\EventController@eventnewrequest');
 	Route::post('payamount/{id}','Admin\EventController@payamount');

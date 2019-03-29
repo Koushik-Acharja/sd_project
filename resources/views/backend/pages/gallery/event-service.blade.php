@@ -4,7 +4,7 @@
 	<li class="breadcrumb-item">
 	  <a href="{{ URL::to('admin') }}">Dashboard</a>
 	</li>
-	<li class="breadcrumb-item active">Overview</li>
+	<li class="breadcrumb-item active">All Service Overviews</li>
 </ol>
 @if(session('success'))
     <div class="alert alert-success" style="margin-top: 20px">
@@ -14,8 +14,8 @@
 <div class="card mb-3">
 	<div class="card-header">
 	  <i class="fas fa-table"></i>
-	  All Events Services
-	  <span><a style="float: right;" href="{{ URL::to('/rule-add') }}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a></span>
+	  All Service Overviews
+	  <span><a style="float: right;" href="{{ URL::to('event-overview-add') }}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a></span>
 
 	</div>
 <style type="text/css">
@@ -42,7 +42,7 @@
 					<tr>
 						<td>{{ $d->service }}</td>
 						<td>{{ $d->describe_service }}</td>
-						<td><img src="/thumbnail/{{$d->demo_pic}}"/></td>
+						<td><img width="100" height="auto" src="/thumbnail/{{$d->demo_pic}}"/></td>
 						<td>{{ $d->sort_order }}</td>
 						<td>{{ ($d->status)==1 ? 'Active' : 'Inactive' }}</td>
 						<td><a class="btn btn-secondary btn-sm" href="{{ URL::to('/rule-edit/'.$d->id) }}">Edit</a></td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Service;
 use DB;
 use Session;
 /*use session_start();*/
@@ -84,6 +85,10 @@ class BasicController extends Controller
     {
         //
     }
+    public function about()
+    {
+        return view('dashboard.pages.about');
+    }
     public function logout(Request $request){
       //Session::end();
       //session_end();
@@ -93,7 +98,9 @@ class BasicController extends Controller
       return redirect('welcome');
     }
     public function welcome(){
-      return view('welcome');
+      $service = Service::all();
+      return view('welcome')->with(compact('service'));
+      //return view('welcome');
    }
     
     public function login(){

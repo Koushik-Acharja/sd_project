@@ -64,7 +64,7 @@
                 <div class="container">
                     <div class="navbar navbar-inverse">
                         <div class="navbar-header">
-                            <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt=""></a>
+                            <a href="{{ URL::to('/') }}" class="navbar-brand"><img src="images/logo.png" alt=""></a>
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="icon1-barMenu"></span>
                                 <span class="icon1-barMenu"></span>
@@ -77,7 +77,7 @@
                                 <li class="single-col active">
                                     <a href="{{ URL::to('/') }}">Home</a>
                                 </li>
-                                <li><a href="aboutUs.html">About Us</a></li>
+                                <li><a href="{{ URL::to('about') }}">About Us</a></li>
                                 <!--
                                 <li>
                                     <a href="services.html">Services <span class="icon icon-arrow-down"></span></a>
@@ -346,10 +346,22 @@
                         </li>
                         <li>
                             <a href="#">
-                                <span class="icon icon-camera"></span>
+                                <!--<span class="icon icon-camera"></span>
+                                <span class="icon" type="image/png" src="/images/close-icon.png"></span>-->
+                                <span class="icon"><img width="55" height="55" src="/icon/icon1.ico"/></span> 
                                 <span class="text">Photographers</span>
                             </a>
                         </li>
+                        @if($service)
+                @foreach($service as $service)
+                    <li>
+                        <a href="#">
+                            <span class="icon"><img width="55" height="55" src="/icon/{{ $service->demo_icon }}"/></span> 
+                            <span class="text">{{ $service->service }}</span>
+                        </a>
+                    </li>
+                @endforeach
+                @endif
                     </ul>
             
                 </div>
@@ -378,7 +390,7 @@
                                         </a>
                                     </div>
                                     <div class="name">Caterers</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
+                                    <p>Catering option belongs to provide food professionally for a special occasion.You can rent cater to provide things like food or something else to satisfy the guest</p>
                                   
                                 </div>
                             </div>
@@ -393,7 +405,7 @@
                                         </a>
                                     </div>
                                     <div class="name">Decor & Florists</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
+                                    <p>To enbellish or ornamentation someone or something that beautifies the environment, you need a florists who acts of adoring you</p>
                            
                                 </div>
                             </div>                          
@@ -408,7 +420,7 @@
                                         </a>
                                     </div>
                                     <div class="name">Wedding Cards</div>
-                                    <p>From weddings to company retreats, event planning takes good coordination skills to manage the details ... Your message has been sent!,</p>
+                                      <p>To invite someone on your occasion you must need a     honouring card so that people can join your playful occasion with warm heart</p>
                                  
                                 </div>
                             </div>                     
@@ -423,7 +435,7 @@
                                         </a>
                                     </div>
                                     <div class="name">Dj</div>
-                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ype specimen book. It has survived not only five centuries,</p>
+                                    <p>DJ or disc jockey is the new fever of current occasion.It actually works like cut,mix and blend recorded music</p>
                                 </div>
                             </div>
                              <div class="item">
@@ -436,7 +448,7 @@
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="name">Photographers & Videographers</div>
+                                    <div class="name">Photographers</div>
                                     <p>Event photography is the practice of photographing guests and occurrences at any Event or occasion where one may hire a photographer</p>
                                 </div>
                             </div>
@@ -530,6 +542,7 @@
             </div>
         </section>
 -->
+<!--
         <section class="news-view">
             <div class="container">
                 <div class="heading">
@@ -600,6 +613,7 @@
                 </div>
             </div>
         </section>
+-->
 <!--
         <section class="event-sponsor">
             <div class="container">
@@ -652,7 +666,7 @@
                                 </div>
                             </div>
                         </div>
--->
+
                         <div style="width: 33%;" class="col-lg-3 col-sm-6 col-md-3 text-center">
                             <div class="footer-link">
                                 <h5>Company</h5>
@@ -665,16 +679,17 @@
                                 </ul>
                             </div>
                         </div>
+-->                        
                         <div style="width: 33%;" class="col-lg-3 col-sm-6 col-md-3">
                             <div class="footer-contact">
                                 <h5>Contact us</h5>
                                 <div class="contact-slide">
                                     <div class="icon icon-location-1"></div>
-                                    <p>74 West Main Street, Oyster Bay, Berlin, 10963 - Germany </p>
+                                    <p>1/A, O.R. Nizam Road, Probortak Circle, Panchlaish, Chittagong </p>
                                 </div>
                                 <div class="contact-slide">
                                     <div class="icon icon-phone"></div>
-                                    <p>516-482-2181 ext 101</p>
+                                    <p>017-859-21678</p>
                                 </div>
                                
                                 <div class="contact-slide">
@@ -683,6 +698,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--
                         <div style="width: 33%;" class="col-lg-3 col-sm-6 col-md-3">
                             <div class="contact-form">
                                 <h5>Connect with us</h5>
@@ -703,6 +719,7 @@
                                         <input type="submit" value="Submit">
                                     </div>
                                 </div>
+-->
 <!--
                                 <div class="sosal-midiya">
                                     <ul>

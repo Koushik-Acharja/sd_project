@@ -2,7 +2,7 @@
             <div class="row">
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="logo">
-                        <a href="index.html"><img src="dashboard/images/logo.png" alt=""></a>
+                        <a href="{{ URL::to('user') }}"><img src="dashboard/images/logo.png" alt=""></a>
                     </div>
 
                     <span class="nav-control">
@@ -32,7 +32,7 @@
                                 <p> Revenue :
                                     <span>$2500.00</span></p>
                                 -->
-                                <img src="dashboard/images/1.png" alt="">
+                                <img src="dashboard/images/ppl2.png" alt="">
                             </div>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="{{ URL::to('myprofile') }}">My Profile</a>

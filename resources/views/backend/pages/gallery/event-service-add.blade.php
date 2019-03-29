@@ -5,9 +5,9 @@
 	  <a href="{{ URL::to('/admin') }}">Dashboard</a>
 	</li>
 	<li class="breadcrumb-item">
-	  <a href="{{ URL::to('/rules') }}">All Event Services</a>
+	  <a href="{{ URL::to('event-service') }}">All Service Overviews</a>
 	</li>
-	<li class="breadcrumb-item active">Add Event Services</li>
+	<li class="breadcrumb-item active">Add Service Overview</li>
 </ol>
 @if(session('success'))
     <div class="alert alert-success" style="margin-top: 20px">
@@ -20,7 +20,7 @@
 	  Add Event Services
 	</div>
 	<div class="card-body">
-	  <form method="post" action="{{ URL::to('service-store') }}" enctype="multipart/form-data">
+	  <form method="post" action="{{ URL::to('overview-store') }}" enctype="multipart/form-data">
 	  	{{ csrf_field() }}
 	  	<div class="form-group">
 	      <label>Service Name</label>

@@ -9,41 +9,44 @@ use Image;
 
 class ServiceController extends Controller
 {
-    public function eventservice(){
-    	$data = Service::all();
-    	return view('backend.pages.gallery.event-service')->with(compact('data'));
+    public function allservice(){
+        $data = Service::all();
+        return view('backend.pages.service.all-service')->with(compact('data'));
     }
-    public function eventserviceadd(){
-    	return view('backend.pages.gallery.event-service-add');
-    }
-    public function servicestore(Request $request){
-    	//
-    	$obj = new Service();
-        $obj->service          = $request->service_name;
-        $obj->describe_service = $request->describe_service;
-    	$obj->sort_order       = $request->sort_order;
-    	$this->validate($request, [
-            'demo_pic' => 'image|required|mimes:jpeg,png,jpg,gif,svg'
-         ]);
-    	$originalImage= $request->file('demo_pic');
-        $thumbnailImage = Image::make($originalImage);
-        $thumbnailPath = public_path().'/thumbnail/';
-        $originalPath = public_path().'/images/';
+    public function servicestore(Request $request)
+    {
+        $obj = new Service();  
+        $obj->service = $request->service_name;
+        $obj->sort_order       = $request->sort_order;
+        
+
+        $originalImage= $request->file('demo_icon');
+
+        $thumbnailImage = Image::make($request->file('demo_icon')->getRealPath());
+        //$thumbnailImage = Image::make($originalImage);
+
+        $thumbnailPath = public_path().'/icon/';
+        $originalPath = public_path().'/thumbnail/';
         $thumbnailImage->save($originalPath.time().$originalImage->getClientOriginalName());
-        $thumbnailImage->resize(400,300);
-        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName()); 
+        $thumbnailImage->resize(55,55);
+        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
 
         
-        $obj->demo_pic         = time().$originalImage->getClientOriginalName();
         
+        $obj->demo_icon         = time().$originalImage->getClientOriginalName();
 
-        $obj->save();
-        	/*{
-        return redirect('event-service')->with('success', 'Service has been successfully added');
-    	}else{
-    		echo $request->service_name;
-    	exit();
-    	}
-    	*/
+
+        if($obj->save()){
+            return redirect('all-services')->with('success', 'Successfully Added');
+        }else{
+            return redirect('all-services')->with('error', 'Something went wrong. Plz Try again.');
+        }
+    }
+    public function servicedelete($id)
+    {
+        $service = Service::find($id);
+        if($service->delete()){
+         return redirect('/all-services')->with('success', 'Successfully Deleted');;
+      }
     }
 }
