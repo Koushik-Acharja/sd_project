@@ -1,9 +1,9 @@
 @extends('dashboard.layout.default')
 @section('content')
-    <!-- /# menu -->
+    <!-- /# menu
     <div class="page-title">
         @include('dashboard.pages.dashboard-element')
-    </div>
+    </div> -->
     <!-- content area -->
     <div class="content-body">
         <div class="container">
