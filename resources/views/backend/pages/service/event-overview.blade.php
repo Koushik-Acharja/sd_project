@@ -45,7 +45,7 @@
 						<td><img width="100" height="auto" src="/thumbnail/{{$d->demo_pic}}"/></td>
 						<td>{{ $d->sort_order }}</td>
 						<td>{{ ($d->status)==1 ? 'Active' : 'Inactive' }}</td>
-						<td><a class="btn btn-secondary btn-sm" href="{{ URL::to('/rule-edit/'.$d->id) }}">Edit</a></td>
+						<td><a class="btn btn-secondary btn-sm" href="{{ URL::to('/overview-edit/'.$d->id) }}">Edit</a></td>
 						<td><button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm">Delete</button></td>
 					</tr>
 				
@@ -63,7 +63,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="{{ URL::to('/rule-delete/'.$d->id) }}" class="btn btn-danger">Delete</a>
+        <a href="{{ URL::to('/overview-delete/'.$d->id) }}" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>

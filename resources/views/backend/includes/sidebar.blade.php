@@ -19,7 +19,8 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="postsDropdown">
       <a class="dropdown-item" href="{{ URL::to('all-services') }}">All Services</a>
-      <a class="dropdown-item" href="{{ URL::to('add-service') }}">Add Service</a>
+      <a class="dropdown-item" href="{{ URL::to('event-overview') }}">All Event Overview</a>
+      <a class="dropdown-item" href="{{ URL::to('event-overview-add') }}">Add Event Overview</a>
       <!--
       <a class="dropdown-item" href="{{ URL::to('event-history') }}">Event History</a>
     -->
@@ -32,8 +33,7 @@
       <span>Gallery</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="postsDropdown">
-      <a class="dropdown-item" href="{{ URL::to('event-overview') }}">All Event Overview</a>
-      <a class="dropdown-item" href="{{ URL::to('event-overview-add') }}">Add Event Overview</a>
+      
       <!--
       <a class="dropdown-item" href="{{ URL::to('event-history') }}">Event History</a>
     -->

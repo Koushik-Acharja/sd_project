@@ -361,6 +361,7 @@
                         </a>
                     </li>
                 @endforeach
+                @else
                 @endif
                     </ul>
             
@@ -452,6 +453,25 @@
                                     <p>Event photography is the practice of photographing guests and occurrences at any Event or occasion where one may hire a photographer</p>
                                 </div>
                             </div>
+                            @if($overview)
+                @foreach($overview as $overview)
+                            <div class="item">
+                                <div class="event-box">
+                                    <div class="img">
+                                        <a href="#">
+                                            <img src="/thumbnail/{{ $overview->demo_pic }}" alt="" >
+                                            <span class="capsan">
+                                                <span>{{ $overview->service }}</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="name">{{ $overview->service }}</div>
+                                    <p>{{ $overview->describe_service }}</p>
+                                </div>
+                            </div>
+                @endforeach
+                @else
+                @endif
                         </div>
                     </div>
                 </div>
