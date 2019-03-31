@@ -78,9 +78,12 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::post('service-store','Admin\ServiceController@servicestore');
 	Route::get('service-delete/{id}', 'Admin\ServiceController@servicedelete');
 
-	Route::get('event-overview','Admin\OverviewController@eventoverview');
-	Route::get('event-overview-add','Admin\OverviewController@eventoverviewadd');
-	Route::post('overview-store','Admin\OverviewController@overviewstore');
+	Route::get('event-overview','Admin\ServiceController@eventoverview');
+	Route::get('event-overview-add','Admin\ServiceController@eventoverviewadd');
+	Route::post('overview-store','Admin\ServiceController@overviewstore');
+	Route::get('overview-edit/{id}','Admin\ServiceController@overviewedit');
+	Route::post('overview-update/{id}','Admin\ServiceController@overviewupdate');
+	Route::get('overview-delete/{id}','Admin\ServiceController@overviewdelete');
 
 	Route::get('event-new-request', 'Admin\EventController@eventnewrequest');
 	Route::post('payamount/{id}','Admin\EventController@payamount');

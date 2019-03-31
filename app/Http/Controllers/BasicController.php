@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Service;
+use App\Overview;
 use DB;
 use Session;
 /*use session_start();*/
@@ -98,8 +99,9 @@ class BasicController extends Controller
       return redirect('welcome');
     }
     public function welcome(){
-      $service = Service::all();
-      return view('welcome')->with(compact('service'));
+      $service = Service::orderBy('sort_order', 'ASC')->get();
+      $overview = Overview::orderBy('sort_order', 'ASC')->get();
+      return view('welcome')->with(compact('service','overview'));
       //return view('welcome');
    }
     
