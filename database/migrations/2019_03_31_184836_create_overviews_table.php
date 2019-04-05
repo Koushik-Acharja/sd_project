@@ -16,7 +16,7 @@ class CreateOverviewsTable extends Migration
         Schema::create('overviews', function (Blueprint $table) {
             $table->increments('id');
             $table->string('service',50);
-            $table->string('describe_service',200);
+            $table->string('describe_service',100);
             $table->string('demo_pic',50);
             $table->integer('sort_order')->nullable();
             $table->timestamps();

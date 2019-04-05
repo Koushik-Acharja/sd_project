@@ -74,6 +74,13 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	Route::get('alladmin', 'Admin\AccessController@alladmin');
 	Route::get('alluser', 'Admin\AccessController@alluser');
 
+	Route::get('slide-all','Admin\ServiceController@slide');
+	Route::get('slide-add','Admin\ServiceController@slideadd');
+	Route::post('slide-store','Admin\ServiceController@slidestore');
+	Route::get('slide-edit/{id}','Admin\ServiceController@slideedit');
+	Route::post('slide-update/{id}','Admin\ServiceController@slideupdate');
+	Route::get('slide-delete/{id}','Admin\ServiceController@slidedelete');
+
 	Route::get('all-services','Admin\ServiceController@allservice');
 	Route::post('service-store','Admin\ServiceController@servicestore');
 	Route::get('service-delete/{id}', 'Admin\ServiceController@servicedelete');

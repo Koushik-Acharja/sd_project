@@ -14,7 +14,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>CREATE EVENT</h2>
-                    <a type="button" href="{{ URL::to('user') }}" class="close" aria-label="Close">
+                    <a type="" href="{{ URL::to('user') }}" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </a>
                 </div>
