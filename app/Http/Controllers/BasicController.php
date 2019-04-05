@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Service;
 use App\Overview;
+use App\Slide;
 use DB;
 use Session;
 /*use session_start();*/
@@ -99,9 +100,10 @@ class BasicController extends Controller
       return redirect('welcome');
     }
     public function welcome(){
+      $slide = Slide::orderBy('sort_order', 'ASC')->get();
       $service = Service::orderBy('sort_order', 'ASC')->get();
       $overview = Overview::orderBy('sort_order', 'ASC')->get();
-      return view('welcome')->with(compact('service','overview'));
+      return view('welcome')->with(compact('service','overview','slide'));
       //return view('welcome');
    }
     

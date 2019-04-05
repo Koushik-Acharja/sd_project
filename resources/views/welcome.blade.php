@@ -273,9 +273,14 @@
         
         <section class="banner">
             <div class="carousel" id="mainBnner">
+            @if($slide)
+            @foreach($slide as $d)
+                <div class="item"><img alt="" width="1349" height="590" src="/slide/{{$d->picture}}"/></div>
                 <div class="item"><img src="images/banner-img/slider-img.jpg" alt=""></div>
                 <div class="item"><img src="images/banner-img/slider-img2.jpg" alt=""></div>
                 <div class="item"><img src="images/banner-img/slider-img3.jpg" alt=""></div>
+            @endforeach
+            @endif
             </div>
             <div class="banner-nav">
                 <div class="prev"><span class="icon icon-arrow-left"></span></div>

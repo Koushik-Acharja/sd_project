@@ -4,7 +4,7 @@
 	<li class="breadcrumb-item">
 	  <a href="{{ URL::to('admin') }}">Dashboard</a>
 	</li>
-	<li class="breadcrumb-item active">All Service Overviews</li>
+	<li class="breadcrumb-item active">Slides</li>
 </ol>
 @if(session('success'))
     <div class="alert alert-success" style="margin-top: 20px">
@@ -14,8 +14,8 @@
 <div class="card mb-3">
 	<div class="card-header">
 	  <i class="fas fa-table"></i>
-	  All Service Overviews
-	  <span><a style="float: right;" href="{{ URL::to('event-overview-add') }}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a></span>
+	  Slides
+	  <span><a style="float: right;" href="{{ URL::to('slide-add') }}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a></span>
 
 	</div>
 <style type="text/css">
@@ -28,10 +28,10 @@
 	    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 	      <thead>
 	        <tr>
-	          <th>Services</th>
-	          <th>Describe</th>
+	          <th>Title</th>
 	          <th>Picture</th>
 	          <th>Sort Order</th>
+	          <th>Status</th>
 	          <th colspan="2">Action</th>
 	        </tr>
 	      </thead>
@@ -39,11 +39,11 @@
 	      	@if($data)
 				@foreach($data as $d)
 					<tr>
-						<td>{{ $d->service }}</td>
-						<td>{{ $d->describe_service }}</td>
-						<td><img width="100" height="auto" src="/thumbnail/{{$d->demo_pic}}"/></td>
+						<td>{{ $d->title }}</td>
+						<td><img width="300" height="150" src="/slide/{{$d->picture}}"/></td>
 						<td>{{ $d->sort_order }}</td>
-						<td><a class="btn btn-secondary btn-sm" href="{{ URL::to('/overview-edit/'.$d->id) }}">Edit</a></td>
+						<td>{{ ($d->status)==1 ? 'Active' : 'Inactive' }}</td>
+						<td><a class="btn btn-secondary btn-sm" href="{{ URL::to('/slide-edit/'.$d->id) }}">Edit</a></td>
 						<td><button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm">Delete</button></td>
 					</tr>
 				
@@ -61,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="{{ URL::to('/overview-delete/'.$d->id) }}" class="btn btn-danger">Delete</a>
+        <a href="{{ URL::to('/slide-delete/'.$d->id) }}" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>

@@ -30,10 +30,11 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="postsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="fas fa-fw fa-folder"></i>
-      <span>Gallery</span>
+      <span>Slide</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="postsDropdown">
-      
+      <a class="dropdown-item" href="{{ URL::to('slide-all') }}">All Slide</a>
+      <a class="dropdown-item" href="{{ URL::to('slide-add') }}">Add Slide</a>
       <!--
       <a class="dropdown-item" href="{{ URL::to('event-history') }}">Event History</a>
     -->
